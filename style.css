@@ -1,0 +1,127 @@
+/* Стиль body */
+body {
+  font-family: "Arial", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #FFE5B4;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Стиль header */
+header {
+  background-color: #FFD8BF;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Стиль названия сайта */
+#site-title {
+  font-size: 32px;
+  font-weight: bold;
+  color: #333333;
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Стиль навигации */
+nav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+nav li {
+  margin-left: 20px;
+}
+
+nav a {
+  color: #333333;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: #ff4500;
+}
+
+/* Стиль секции "Обо мне" */
+#about {
+  padding: 40px;
+  background-color: #ffffff;
+  font-family: 'Montserrat', sans-serif;
+}
+
+#about h2 {
+  font-size: 24px;
+  color: #333333;
+  margin-bottom: 20px;
+}
+
+#about p {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #666666;
+  margin-bottom: 20px;
+}
+
+/* Стиль секции "Контакты" */
+#contacts {
+  padding: 40px;
+  background-color: #ffffff;
+  font-family: 'Montserrat', sans-serif;
+}
+
+#contacts h2 {
+  font-size: 24px;
+  color: #333333;
+  margin-bottom: 20px;
+}
+
+#contacts ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#contacts li {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #666666;
+  margin-bottom: 10px;
+}
+
+/* Стиль кнопок соцсетей */
+.social-button {
+  display: inline-block;
+  background-color: #ff4500;
+  color: #000000;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  font-family: 'Montserrat', sans-serif;
+  box-shadow: 0 2px 2px rgba(0,0,0,0.2); /* добавляем тень */
+  border: none; /* убираем границу */
+  cursor: pointer; /* меняем курсор при наведении */
+}
+
+.social-button:hover {
+  background-color: #ffffff;
+  color: #ff4500;
+  border: 1px solid #ff4500;
+  box-shadow: 0 4px 4px rgba(0,0,0,0.2); /* добавляем большую тень при наведении */
+  transform: translateY(-2px); /* поднимаем кнопку наверх */
+}
+
+.footer-text {
+  font-size: 12px;
+  text-align: center;
+  margin-top: 10px;
+}
