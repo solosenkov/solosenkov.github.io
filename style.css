@@ -6,6 +6,12 @@ body {
   background-color: #FFE5B4;
   font-family: 'Montserrat', sans-serif;
 }
+/* Api Style */
+.api-message {
+  font-weight: bold;
+  border: 1px solid black;
+  padding: 10px;
+}
 
 /* Стиль header */
 header {
