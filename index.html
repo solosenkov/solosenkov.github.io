@@ -1,56 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:200&display=swap" rel="stylesheet" />
-    <title> Testing o muerte</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <header>
-      <nav>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:200&display=swap" rel="stylesheet" />
+  <title> Testing o muerte</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="https://west-ceres-d48.notion.site/4e528f0cf17c48128b3b0b33312c014f" target="_blank">Обо мне</a>
+        <li><a href="https://west-ceres-d48.notion.site/c2a45206c1b74f97b1082ce6f0af093e" target="_blank">Портфолио</a>
+        </li>
+        <li><a href="https://west-ceres-d48.notion.site/05fcd663b4874b36afff2cf0b7f5411c" target="_blank"
+            style="font-weight:bold; color:red;">Мой сайт: История версий</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="about-me">
+      <div class="container">
+        <h3> Привет, меня зовут Женя. Я тестировщик ПО, и я стараюсь помочь создавать лучшие продукты для людей. А это
+          мой сайт-визитка. Сверху есть кнопки "Обо мне" и "Портфолио" и самое удивительное,
+          что там можно почитать немного обо мне и посмотреть мое портфолио. Кстати, кнопки с контактами ниже тоже
+          работают!</h3>
+        <img src="me.jpg" alt="мое фото" width="40%" height="40%" />
+        <p>Я - опытный тестировщик. Знаю все скучную теорию тестирования , но больше люблю
+          практическую часть.
+          Работал как с веб-приложениями, так и с мобильными приложениями, включая тестирование функциональности, GUI,
+          API, интеграционного тестирования, регрессионного тестирования.
+          Кроме того, я имею опыт работы с такими инструментами, как Jira, Confluence, Postman, Charles, CLI, Git, CI/CD
+          и немного владею Python. И еще знаю как выйти из VIM :).</p>
+         <p>По ссылке ниже можно скачать мой CV</p>
+          <a href="CV.pdf" target="_blank">Скачать мое резюме (PDF)</a>
+        <p> А еще чуть чуть ниже можно почитать интересные факты про Чак Норриса. Да - это API.
+          Для того чтобы узнать новый факт о Чаке - просто обнови страницу:</p>
+        <div class="api-message">
+          <div id="joke-container"></div>
+        </div>
+
+    </section>
+    <section id="contact">
+      <div class="container">
+        <h2>Контакты</h2>
         <ul>
-          <li><a href="https://west-ceres-d48.notion.site/4e528f0cf17c48128b3b0b33312c014f" target="_blank">Обо мне</a>
-          <li><a href="https://west-ceres-d48.notion.site/c2a45206c1b74f97b1082ce6f0af093e" target="_blank">Портфолио</a></li>
-          <li><a href="https://west-ceres-d48.notion.site/05fcd663b4874b36afff2cf0b7f5411c" target="_blank" style="font-weight:bold; color:red;">Мой сайт: История версий</a></li>
+          <li><a href="https://t.me/solosenkoff" target="_blank">Телеграмм</a></li>
+          <li><a href="https://www.linkedin.com/in/eugene-solosenkov/" target="_blank">Linkedin</a></li>
+          <li><a href="https://www.utest.com/" target="_blank">Utest - Tester ID: 1615442</a></li>
+          <li><a href="https://github.com/solosenkov?tab=projects" target="_blank">Github</a></li>
+          <li><a href="https://west-ceres-d48.notion.site/4e528f0cf17c48128b3b0b33312c014f" target="_blank">Notion</a>
+          </li>
+          <li><a href="mailto:solosenkov@gmail.com" target="_blank">Написать мне</a></li>
         </ul>
-      </nav>
-    </header>
-   
-    <main>
-      <section id="about-me">
-        <div class="container">
-          <h1>Привет, я Женя и пока тут пусто. Скоро что-нить добавлю, а пока потыкайте кнопочки выше "Обо мне" и "Портфолио". Кстати, кнопки  с контактами ниже тоже работают!</h1>
-          <img src="me.jpg" alt="мое фото" width="40%" height="40%" />
-          <p>Я тестировщик ПО, и я стараюсь помочь создавать лучшие продукты для людей.</p>
-             <p> Кстати, ниже можно почитать интересные факты про Чак Норриса. И работает все это благодаря подключномму АПИ. Для того чтобы узнать новывй факт о Чаке - просто обнови страницу:</p>
-              <div class="api-message"><div id="joke-container"></div>
-            </div>
-            <p>  А тут будут свежие анекдоты:</p>
-               <div class="api-message"><div id="joke-container-2"></div>
-        </div>
-      </section>
-      <section id="contact">
-        <div class="container">
-          <h2>Контакты</h2>
-          <ul>
-            <li><a href="https://t.me/solosenkoff" target="_blank">Телеграмм</a></li>
-            <li><a href="https://www.linkedin.com/in/eugene-solosenkov/" target="_blank">Linkedin</a></li>
-            <li><a href="https://www.utest.com/" target="_blank">Utest - Tester ID: 1615442</a></li>
-            <li><a href="https://github.com/solosenkov?tab=projects" target="_blank">Github</a></li>
-            <li><a href="https://west-ceres-d48.notion.site/4e528f0cf17c48128b3b0b33312c014f" target="_blank">Notion</a></li>
-            <li><a href="mailto:solosenkov@gmail.com" target="_blank">Написать мне</a></li>
-          </ul>
-        </div>
-      </section>
-    </main>
-    
-    <footer>
-    <div class="footer-text">Версия 1.1</div>
-    </footer>
-    <script src="script.js"></script>
-  </body>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-text">Версия 1.3</div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+
 </html>
-
-
