@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cypress Training Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        button {
+            padding: 10px;
+            margin-top: 10px;
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .calculator {
+            margin-top: 20px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        input[type="text"] {
+            width: calc(100% - 20px);
+            padding: 5px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Welcome to Cypress Training Page</h1>
+
+        <!-- Fields -->
+        <label for="inputText">Input Field:</label>
+        <input type="text" id="inputText" placeholder="Type something...">
+
+        <!-- Checkboxes -->
+        <div>
+            <input type="checkbox" id="checkbox1" name="checkbox1">
+            <label for="checkbox1">Checkbox 1</label>
+        </div>
+        <div>
+            <input type="checkbox" id="checkbox2" name="checkbox2">
+            <label for="checkbox2">Checkbox 2</label>
+        </div>
+
+        <!-- Radio Buttons -->
+        <div>
+            <input type="radio" id="radio1" name="radio" value="option1">
+            <label for="radio1">Radio 1</label>
+        </div>
+        <div>
+            <input type="radio" id="radio2" name="radio" value="option2">
+            <label for="radio2">Radio 2</label>
+        </div>
+
+        <!-- Links -->
+        <a href="#">Link 1</a>
+        <br>
+        <a href="#">Link 2</a>
+
+        <!-- Text Blocks -->
+        <p>This is a paragraph.</p>
+        <div>This is a div block.</div>
+
+        <!-- Lists -->
+        <ul>
+            <li>Item 1</li>
+            <li>Item 2</li>
+            <li>Item 3</li>
+        </ul>
+
+        <!-- Tables -->
+        <table border="1">
+            <tr>
+                <th>Header 1</th>
+                <th>Header 2</th>
+            </tr>
+            <tr>
+                <td>Row 1, Cell 1</td>
+                <td>Row 1, Cell 2</td>
+            </tr>
+            <tr>
+                <td>Row 2, Cell 1</td>
+                <td>Row 2, Cell 2</td>
+            </tr>
+        </table>
+
+        <!-- Calculator -->
+        <div class="calculator">
+            <h2>Calculator</h2>
+            <input type="text" id="calcDisplay" disabled>
+            <br>
+            <button onclick="appendToDisplay('1')">1</button>
+            <button onclick="appendToDisplay('2')">2</button>
+            <button onclick="appendToDisplay('3')">3</button>
+            <button onclick="appendToDisplay('+')">+</button>
+            <br>
+            <button onclick="appendToDisplay('4')">4</button>
+            <button onclick="appendToDisplay('5')">5</button>
+            <button onclick="appendToDisplay('6')">6</button>
+            <button onclick="appendToDisplay('-')">-</button>
+            <br>
+            <button onclick="appendToDisplay('7')">7</button>
+            <button onclick="appendToDisplay('8')">8</button>
+            <button onclick="appendToDisplay('9')">9</button>
+            <button onclick="appendToDisplay('*')">*</button>
+            <br>
+            <button onclick="appendToDisplay('0')">0</button>
+            <button onclick="appendToDisplay('.')">.</button>
+            <button onclick="clearDisplay()">C</button>
+            <button onclick="calculate()">=</button>
+        </div>
+
+    </div>
+
+    <script>
+        function appendToDisplay(value) {
+            document.getElementById('calcDisplay').value += value;
+        }
+
+        function clearDisplay() {
+            document.getElementById('calcDisplay').value = '';
+        }
+
+        function calculate() {
+            const display = document.getElementById('calcDisplay');
+            try {
+                display.value = eval(display.value);
+            } catch (error) {
+                display.value = 'Error';
+            }
+        }
+    </script>
+
+</body>
+
+</html>
