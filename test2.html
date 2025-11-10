@@ -1,142 +1,145 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Just Test</title>
-    <style>
-        /* Add some style to the page */
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f2f2f2;
-        }
-
-        h1 {
-            color: #333;
-            text-align: center;
-        }
-
-        /* Add some style to the form */
-        form {
-            margin: 0 auto;
-            width: 50%;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 5px;
-            box-shadow: 0px 0px 10px #ccc;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 10px;
-            font-weight: bold;
-        }
-
-        input[type="text"], textarea {
-            width: 100%;
-            padding: 10px;
-            border-radius: 5px;
-            border: none;
-            margin-bottom: 20px;
-        }
-
-        input[type="submit"] {
-            background-color: #333;
-            color: #fff;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        /* Add some style to the table */
-        table {
-            margin: 0 auto;
-            width: 50%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
-
-        th, td {
-            padding: 10px;
-            text-align: left;
-            border-bottom: 1px solid #ddd;
-        }
-
-        th {
-            background-color: #333;
-            color: #fff;
-        }
-
-        /* Add some style to the button */
-        button {
-            background-color: #333;
-            color: #fff;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            margin-top: 20px;
-        }
-
-        /* Add some style to the image */
-        img {
-            max-width: 100%;
-            height: auto;
-            margin-top: 20px;
-        }
-
-        /* Add some style to the footer */
-        footer {
-            text-align: center;
-            margin-top: 20px;
-            color: #999;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice 2 - Interactive Forms | Testing o muerte</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="practice-style.css">
 </head>
 <body>
-    <h1>Welcome to My Interactive Page!</h1>
+    <!-- Breadcrumbs -->
+    <nav class="breadcrumbs">
+        <div class="breadcrumbs-content">
+            <a href="index.html"><i class="fas fa-home"></i> Testing o muerte</a>
+            <span>/</span>
+            <span>Practice 2</span>
+        </div>
+    </nav>
 
-    <form>
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" placeholder="Enter your name">
+    <div class="container">
+        <h1 class="page-title">Practice 2: Interactive Forms</h1>
+        <p class="page-description">
+            Test form submissions, table data handling, and dynamic image toggling. 
+            This page is perfect for practicing form validation and data verification in Cypress.
+        </p>
 
-        <label for="email">Email:</label>
-        <input type="text" id="email" name="email" placeholder="Enter your email">
+        <div class="practice-container">
+            <!-- Contact Form Section -->
+            <div class="section-divider">
+                <h2><i class="fas fa-envelope"></i> Contact Form</h2>
+                <p>Practice form filling and submission</p>
+            </div>
 
-        <label for="message">Message:</label>
-        <textarea id="message" name="message" placeholder="Enter your message"></textarea>
+            <form id="contactForm">
+                <div class="form-group">
+                    <label for="name"><i class="fas fa-user"></i> Name:</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                </div>
 
-        <input type="submit" value="Submit">
-    </form>
+                <div class="form-group">
+                    <label for="email"><i class="fas fa-envelope"></i> Email:</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                </div>
 
-    <table>
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Email</th>
-                <th>Message</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>John Doe</td>
-                <td>johndoe@example.com</td>
-                <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc vel bibendum bibendum, velit sapien aliquet velit, vel bibendum sapien sapien vel sapien.</td>
-            </tr>
-            <tr>
-                <td>Jane Doe</td>
-                <td>janedoe@example.com</td>
-                <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc vel bibendum bibendum, velit sapien aliquet velit, vel bibendum sapien sapien vel sapien.</td>
-            </tr>
-            <tr>
-                <td>Bob Smith</td>
-                <td>bobsmith@example.com</td>
-                <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc vel bibendum bibendum, velit sapien aliquet velit, vel bibendum sapien sapien vel sapien.</td>
-            </tr>
-        </tbody>
-    </table>
+                <div class="form-group">
+                    <label for="message"><i class="fas fa-comment"></i> Message:</label>
+                    <textarea id="message" name="message" placeholder="Enter your message" required></textarea>
+                </div>
 
-    <button id="toggle-image">Toggle Image</button>
+                <button type="submit">
+                    <i class="fas fa-paper-plane"></i> Submit
+                </button>
+            </form>
 
-    <img id="my-image" src="https://docs.cypress.io/img/guides/overview/v10/real-world-app.png" width="40%" height="40%" alt="A beautiful landscape">
+            <!-- Data Table Section -->
+            <div class="section-divider" style="margin-top: 3rem;">
+                <h2><i class="fas fa-table"></i> User Data Table</h2>
+                <p>Practice table data extraction and verification</p>
+            </div>
 
-    <footer
+            <table>
+                <thead>
+                    <tr>
+                        <th><i class="fas fa-user"></i> Name</th>
+                        <th><i class="fas fa-envelope"></i> Email</th>
+                        <th><i class="fas fa-comment-dots"></i> Message</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>John Doe</td>
+                        <td>johndoe@example.com</td>
+                        <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Testing automation with Cypress.</td>
+                    </tr>
+                    <tr>
+                        <td>Jane Doe</td>
+                        <td>janedoe@example.com</td>
+                        <td>Quality assurance is crucial for delivering reliable software products to users.</td>
+                    </tr>
+                    <tr>
+                        <td>Bob Smith</td>
+                        <td>bobsmith@example.com</td>
+                        <td>Automated testing helps catch bugs early and saves time in the development process.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- Image Toggle Section -->
+            <div class="section-divider" style="margin-top: 3rem;">
+                <h2><i class="fas fa-image"></i> Dynamic Image Toggle</h2>
+                <p>Practice testing dynamic element visibility</p>
+            </div>
+
+            <div style="text-align: center; margin: 2rem 0;">
+                <button id="toggle-image" style="margin-bottom: 2rem;">
+                    <i class="fas fa-eye"></i> Toggle Image
+                </button>
+
+                <div id="image-container" style="display: none; animation: fadeIn 0.5s ease;">
+                    <img id="my-image" 
+                         src="https://docs.cypress.io/img/guides/overview/v10/real-world-app.png" 
+                         alt="Cypress Real World App" 
+                         style="max-width: 100%; height: auto; border-radius: 12px; box-shadow: var(--shadow-glow);">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Back to Home Button -->
+    <a href="index.html" class="back-button" title="Back to Home">
+        <i class="fas fa-arrow-left"></i>
+    </a>
+
+    <script>
+        // Form submission handler
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Form submitted successfully! (This is a demo - no data is actually sent)');
+        });
+
+        // Image toggle functionality
+        const toggleBtn = document.getElementById('toggle-image');
+        const imageContainer = document.getElementById('image-container');
+        
+        toggleBtn.addEventListener('click', function() {
+            if (imageContainer.style.display === 'none') {
+                imageContainer.style.display = 'block';
+                toggleBtn.innerHTML = '<i class="fas fa-eye-slash"></i> Hide Image';
+            } else {
+                imageContainer.style.display = 'none';
+                toggleBtn.innerHTML = '<i class="fas fa-eye"></i> Show Image';
+            }
+        });
+    </script>
+
+</body>
+</html>

@@ -5,137 +5,181 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cypress Training Page</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
-            margin: 20px;
-        }
-
-        .container {
-            max-width: 800px;
-            margin: auto;
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        button {
-            padding: 10px;
-            margin-top: 10px;
-            background-color: #4caf50;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        .calculator {
-            margin-top: 20px;
-            border: 1px solid #ccc;
-            padding: 10px;
-            border-radius: 5px;
-        }
-
-        input[type="text"] {
-            width: calc(100% - 20px);
-            padding: 5px;
-            margin-bottom: 10px;
-        }
-    </style>
+    <title>Practice 1 - Cypress Training | Testing o muerte</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="practice-style.css">
 </head>
 
 <body>
+    <!-- Breadcrumbs -->
+    <nav class="breadcrumbs">
+        <div class="breadcrumbs-content">
+            <a href="index.html"><i class="fas fa-home"></i> Testing o muerte</a>
+            <span>/</span>
+            <span>Practice 1</span>
+        </div>
+    </nav>
 
     <div class="container">
+        <h1 class="page-title">Practice 1: Cypress Training</h1>
+        <p class="page-description">
+            This page contains various HTML elements for practicing Cypress automation testing. 
+            Use this page to test selectors, interactions, assertions, and more.
+        </p>
 
-        <h1>Welcome to Cypress Training Page</h1>
+        <div class="practice-container">
+            <!-- Input Field Section -->
+            <div class="section-divider">
+                <h2><i class="fas fa-keyboard"></i> Input Fields</h2>
+                <p>Practice text input interactions</p>
+            </div>
+            
+            <div class="form-group">
+                <label for="inputText">Input Field:</label>
+                <input type="text" id="inputText" placeholder="Type something...">
+            </div>
 
-        <!-- Fields -->
-        <label for="inputText">Input Field:</label>
-        <input type="text" id="inputText" placeholder="Type something...">
+            <!-- Checkboxes Section -->
+            <div class="section-divider">
+                <h2><i class="fas fa-check-square"></i> Checkboxes</h2>
+                <p>Test checkbox selections</p>
+            </div>
 
-        <!-- Checkboxes -->
-        <div>
-            <input type="checkbox" id="checkbox1" name="checkbox1">
-            <label for="checkbox1">Checkbox 1</label>
+            <div class="checkboxes">
+                <label>
+                    <input type="checkbox" id="checkbox1" name="checkbox1">
+                    Checkbox 1 - First option
+                </label>
+                <label>
+                    <input type="checkbox" id="checkbox2" name="checkbox2">
+                    Checkbox 2 - Second option
+                </label>
+            </div>
+
+            <!-- Radio Buttons Section -->
+            <div class="section-divider">
+                <h2><i class="fas fa-dot-circle"></i> Radio Buttons</h2>
+                <p>Test radio button selections</p>
+            </div>
+
+            <div class="radio-buttons">
+                <label>
+                    <input type="radio" id="radio1" name="radio" value="option1">
+                    Radio 1 - Option One
+                </label>
+                <label>
+                    <input type="radio" id="radio2" name="radio" value="option2">
+                    Radio 2 - Option Two
+                </label>
+            </div>
+
+            <!-- Links Section -->
+            <div class="section-divider">
+                <h2><i class="fas fa-link"></i> Links</h2>
+                <p>Test link clicks and navigation</p>
+            </div>
+
+            <div class="links">
+                <a href="#"><i class="fas fa-arrow-right"></i> Link 1 - First Navigation</a>
+                <a href="#"><i class="fas fa-arrow-right"></i> Link 2 - Second Navigation</a>
+            </div>
+
+            <!-- Text Blocks Section -->
+            <div class="section-divider">
+                <h2><i class="fas fa-align-left"></i> Text Blocks</h2>
+                <p>Test text content assertions</p>
+            </div>
+
+            <div class="text-blocks">
+                <p>This is a paragraph with important information for testing text assertions.</p>
+                <p>This is a div block that can be used to verify element visibility and content.</p>
+            </div>
+
+            <!-- Lists Section -->
+            <div class="section-divider">
+                <h2><i class="fas fa-list"></i> Lists</h2>
+                <p>Test list iterations and item selections</p>
+            </div>
+
+            <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 1rem;">
+                <li style="padding: 1rem; background: var(--tertiary-bg); border-radius: 8px;">
+                    <i class="fas fa-circle" style="color: var(--accent-cyan); margin-right: 0.5rem;"></i> Item 1
+                </li>
+                <li style="padding: 1rem; background: var(--tertiary-bg); border-radius: 8px;">
+                    <i class="fas fa-circle" style="color: var(--accent-cyan); margin-right: 0.5rem;"></i> Item 2
+                </li>
+                <li style="padding: 1rem; background: var(--tertiary-bg); border-radius: 8px;">
+                    <i class="fas fa-circle" style="color: var(--accent-cyan); margin-right: 0.5rem;"></i> Item 3
+                </li>
+            </ul>
+
+            <!-- Tables Section -->
+            <div class="section-divider">
+                <h2><i class="fas fa-table"></i> Tables</h2>
+                <p>Test table data extraction and verification</p>
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Header 1</th>
+                        <th>Header 2</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Row 1, Cell 1</td>
+                        <td>Row 1, Cell 2</td>
+                    </tr>
+                    <tr>
+                        <td>Row 2, Cell 1</td>
+                        <td>Row 2, Cell 2</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- Calculator Section -->
+            <div class="section-divider">
+                <h2><i class="fas fa-calculator"></i> Calculator</h2>
+                <p>Test complex interactions and calculations</p>
+            </div>
+
+            <div class="calculator">
+                <input type="text" id="calcDisplay" disabled style="text-align: right; font-size: 1.5rem; font-family: 'JetBrains Mono', monospace;">
+                <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.5rem; margin-top: 1rem;">
+                    <button onclick="appendToDisplay('1')">1</button>
+                    <button onclick="appendToDisplay('2')">2</button>
+                    <button onclick="appendToDisplay('3')">3</button>
+                    <button onclick="appendToDisplay('+')">+</button>
+                    <button onclick="appendToDisplay('4')">4</button>
+                    <button onclick="appendToDisplay('5')">5</button>
+                    <button onclick="appendToDisplay('6')">6</button>
+                    <button onclick="appendToDisplay('-')">-</button>
+                    <button onclick="appendToDisplay('7')">7</button>
+                    <button onclick="appendToDisplay('8')">8</button>
+                    <button onclick="appendToDisplay('9')">9</button>
+                    <button onclick="appendToDisplay('*')">*</button>
+                    <button onclick="appendToDisplay('0')">0</button>
+                    <button onclick="appendToDisplay('.')">.</button>
+                    <button onclick="clearDisplay()" style="background: var(--error);">C</button>
+                    <button onclick="calculate()" style="background: var(--success);">=</button>
+                </div>
+            </div>
         </div>
-        <div>
-            <input type="checkbox" id="checkbox2" name="checkbox2">
-            <label for="checkbox2">Checkbox 2</label>
-        </div>
-
-        <!-- Radio Buttons -->
-        <div>
-            <input type="radio" id="radio1" name="radio" value="option1">
-            <label for="radio1">Radio 1</label>
-        </div>
-        <div>
-            <input type="radio" id="radio2" name="radio" value="option2">
-            <label for="radio2">Radio 2</label>
-        </div>
-
-        <!-- Links -->
-        <a href="#">Link 1</a>
-        <br>
-        <a href="#">Link 2</a>
-
-        <!-- Text Blocks -->
-        <p>This is a paragraph.</p>
-        <div>This is a div block.</div>
-
-        <!-- Lists -->
-        <ul>
-            <li>Item 1</li>
-            <li>Item 2</li>
-            <li>Item 3</li>
-        </ul>
-
-        <!-- Tables -->
-        <table border="1">
-            <tr>
-                <th>Header 1</th>
-                <th>Header 2</th>
-            </tr>
-            <tr>
-                <td>Row 1, Cell 1</td>
-                <td>Row 1, Cell 2</td>
-            </tr>
-            <tr>
-                <td>Row 2, Cell 1</td>
-                <td>Row 2, Cell 2</td>
-            </tr>
-        </table>
-
-        <!-- Calculator -->
-        <div class="calculator">
-            <h2>Calculator</h2>
-            <input type="text" id="calcDisplay" disabled>
-            <br>
-            <button onclick="appendToDisplay('1')">1</button>
-            <button onclick="appendToDisplay('2')">2</button>
-            <button onclick="appendToDisplay('3')">3</button>
-            <button onclick="appendToDisplay('+')">+</button>
-            <br>
-            <button onclick="appendToDisplay('4')">4</button>
-            <button onclick="appendToDisplay('5')">5</button>
-            <button onclick="appendToDisplay('6')">6</button>
-            <button onclick="appendToDisplay('-')">-</button>
-            <br>
-            <button onclick="appendToDisplay('7')">7</button>
-            <button onclick="appendToDisplay('8')">8</button>
-            <button onclick="appendToDisplay('9')">9</button>
-            <button onclick="appendToDisplay('*')">*</button>
-            <br>
-            <button onclick="appendToDisplay('0')">0</button>
-            <button onclick="appendToDisplay('.')">.</button>
-            <button onclick="clearDisplay()">C</button>
-            <button onclick="calculate()">=</button>
-        </div>
-
     </div>
+
+    <!-- Back to Home Button -->
+    <a href="index.html" class="back-button" title="Back to Home">
+        <i class="fas fa-arrow-left"></i>
+    </a>
 
     <script>
         function appendToDisplay(value) {
