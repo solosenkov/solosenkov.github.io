@@ -1,429 +1,579 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="ru">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="title" content="Evgenii Solosenkov | QA Architect & Test Automation Expert | Hire Software Tester">
-  <meta name="description" content="Senior QA Engineer & Test Automation Architect with expertise in Playwright, Postman, Newman, API testing, performance testing. Available for hire. Check out my GitHub testing tools and frameworks.">
-  <meta name="keywords" content="QA engineer, software tester, test automation, Playwright, Cypress, API testing, Postman, Newman, hire tester, QA architect, manual testing, automated testing, performance testing, UI testing, Jira, TestRail, SQL, JavaScript, Python, testing tools, QA consultant, quality assurance expert, bug hunting, regression testing, test frameworks">
-  <meta name="author" content="Evgenii Solosenkov">
-  <meta name="robots" content="index,follow">
-  <meta property="og:title" content="Evgenii Solosenkov | QA Architect & Software Testing Expert">
-  <meta property="og:description" content="Senior QA Engineer specializing in test automation, API testing, and quality assurance. Creator of testing tools on GitHub. Available for hire.">
-  <meta property="og:image" content="https://solosenkov.github.io/me.jpg">
-  <meta property="og:url" content="https://solosenkov.github.io">
+  <title>ПромАвтоматика. Конструкторское бюро</title>
+  <meta name="description" content="Цифровая студия полного цикла. Сайты, CRM, Telegram-боты, автоматизация бизнес-процессов.">
+  <meta name="author" content="ПромАвтоматика">
+  <meta property="og:title" content="ПромАвтоматика. Конструкторское бюро">
+  <meta property="og:description" content="Сайты, CRM, Telegram-боты, автоматизация. MVP за 1-3 дня.">
   <meta property="og:type" content="website">
-  <meta name="twitter:title" content="Evgenii Solosenkov | QA Architect & Test Automation Expert">
-  <meta name="twitter:description" content="Senior QA Engineer with expertise in Playwright, API testing, and test automation. Check out my testing tools on GitHub.">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://solosenkov.github.io/me.jpg">
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
-
-  <!-- Google Fonts -->
+  <meta property="og:url" content="https://solosenkov.github.io">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0a0e13;
+      --surface: #111820;
+      --surface-2: #1a2330;
+      --ink: #e8edf2;
+      --muted: #7a8896;
+      --teal: #11a39a;
+      --teal-glow: rgba(17, 163, 154, 0.15);
+      --line: rgba(122, 136, 150, 0.12);
+      --line-bright: rgba(17, 163, 154, 0.3);
+      --font-display: 'Oswald', system-ui, sans-serif;
+      --font-body: 'IBM Plex Sans', system-ui, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
 
-  <title>Testing o muerte | Evgenii Solosenkov</title>
-  <link rel="stylesheet" href="style.css?v=2.0">
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--font-body);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    /* Blueprint grid background */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(var(--line) 1px, transparent 1px),
+        linear-gradient(90deg, var(--line) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Header */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(10, 14, 19, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+
+    .logo {
+      font-family: var(--font-display);
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      color: var(--ink);
+      text-decoration: none;
+    }
+
+    .logo span { color: var(--teal); }
+
+    .logo small {
+      display: block;
+      font-family: var(--font-mono);
+      font-size: 10px;
+      font-weight: 500;
+      color: var(--muted);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    nav { display: flex; gap: 28px; }
+
+    nav a {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--muted);
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      transition: color 0.2s;
+    }
+
+    nav a:hover { color: var(--teal); }
+
+    /* Hero */
+    .hero {
+      padding: 120px 0 80px;
+      position: relative;
+    }
+
+    .hero-tag {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--teal);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .hero-tag::before {
+      content: '';
+      width: 32px;
+      height: 1px;
+      background: var(--teal);
+    }
+
+    .hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(40px, 7vw, 80px);
+      font-weight: 700;
+      line-height: 1;
+      letter-spacing: -0.01em;
+      margin-bottom: 28px;
+      max-width: 800px;
+    }
+
+    .hero h1 span { color: var(--teal); }
+
+    .hero p {
+      font-size: 18px;
+      color: var(--muted);
+      max-width: 520px;
+      margin-bottom: 40px;
+    }
+
+    .hero-buttons { display: flex; gap: 16px; flex-wrap: wrap; }
+
+    .btn {
+      font-family: var(--font-mono);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-decoration: none;
+      padding: 14px 28px;
+      border-radius: 4px;
+      transition: all 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-primary {
+      background: var(--teal);
+      color: var(--bg);
+    }
+
+    .btn-primary:hover {
+      background: #0d8b83;
+      box-shadow: 0 0 24px var(--teal-glow);
+    }
+
+    .btn-ghost {
+      border: 1px solid var(--line-bright);
+      color: var(--ink);
+    }
+
+    .btn-ghost:hover { border-color: var(--teal); color: var(--teal); }
+
+    /* Blueprint decorations */
+    .blueprint-stamp {
+      position: absolute;
+      top: 40px;
+      right: 24px;
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: var(--muted);
+      letter-spacing: 0.15em;
+      opacity: 0.5;
+    }
+
+    .blueprint-dim {
+      position: absolute;
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: var(--teal);
+      opacity: 0.4;
+      letter-spacing: 0.1em;
+    }
+
+    /* Metrics */
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      margin-top: 80px;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .metric {
+      padding: 32px 0;
+      text-align: center;
+      border-right: 1px solid var(--line);
+    }
+
+    .metric:last-child { border-right: none; }
+
+    .metric strong {
+      display: block;
+      font-family: var(--font-display);
+      font-size: 36px;
+      font-weight: 700;
+      color: var(--teal);
+      line-height: 1;
+    }
+
+    .metric span {
+      display: block;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--muted);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-top: 10px;
+    }
+
+    /* Services */
+    .section { padding: 100px 0; }
+
+    .section-kicker {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--teal);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .section h2 {
+      font-family: var(--font-display);
+      font-size: clamp(32px, 5vw, 52px);
+      font-weight: 700;
+      line-height: 1.05;
+      margin-bottom: 60px;
+      max-width: 700px;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1px;
+      background: var(--line);
+      border: 1px solid var(--line);
+    }
+
+    .service {
+      background: var(--bg);
+      padding: 40px 32px;
+      transition: background 0.2s;
+    }
+
+    .service:hover { background: var(--surface); }
+
+    .service-num {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--teal);
+      letter-spacing: 0.1em;
+      margin-bottom: 16px;
+    }
+
+    .service h3 {
+      font-family: var(--font-display);
+      font-size: 22px;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    .service p {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    /* Cases */
+    .cases-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    .case {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      padding: 36px;
+      transition: border-color 0.2s;
+    }
+
+    .case:hover { border-color: var(--line-bright); }
+
+    .case-tag {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: var(--teal);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    .case h3 {
+      font-family: var(--font-display);
+      font-size: 24px;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .case h4 {
+      font-family: var(--font-body);
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+
+    .case p {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .case-link {
+      display: inline-block;
+      margin-top: 16px;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--teal);
+      text-decoration: none;
+      letter-spacing: 0.05em;
+    }
+
+    .case-link:hover { text-decoration: underline; }
+
+    /* Contact */
+    .contact {
+      padding: 100px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .contact-inner {
+      text-align: center;
+    }
+
+    .contact h2 {
+      font-family: var(--font-display);
+      font-size: clamp(36px, 6vw, 64px);
+      font-weight: 700;
+      margin-bottom: 24px;
+    }
+
+    .contact p {
+      color: var(--muted);
+      font-size: 18px;
+      margin-bottom: 40px;
+    }
+
+    .contact-links {
+      display: flex;
+      gap: 24px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .contact-links a {
+      font-family: var(--font-mono);
+      font-size: 13px;
+      color: var(--ink);
+      text-decoration: none;
+      padding: 12px 24px;
+      border: 1px solid var(--line);
+      border-radius: 4px;
+      transition: all 0.2s;
+    }
+
+    .contact-links a:hover {
+      border-color: var(--teal);
+      color: var(--teal);
+    }
+
+    /* Footer */
+    footer {
+      padding: 40px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .footer-inner span {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--muted);
+      letter-spacing: 0.1em;
+    }
+
+    /* Mobile */
+    @media (max-width: 768px) {
+      nav { display: none; }
+      .metrics { grid-template-columns: 1fr; }
+      .metric { border-right: none; border-bottom: 1px solid var(--line); }
+      .metric:last-child { border-bottom: none; }
+      .cases-grid { grid-template-columns: 1fr; }
+      .blueprint-stamp, .blueprint-dim { display: none; }
+    }
+  </style>
 </head>
-
 <body>
-  <!-- Header with sticky navigation -->
-  <header class="header">
-    <div class="container header-content">
+
+  <header>
+    <div class="container header-inner">
       <a href="#" class="logo">
-        <span class="logo-text">Testing <span class="accent">o</span> muerte</span>
+        Пром<span>Автоматика</span>
+        <small>Конструкторское бюро</small>
       </a>
-      <nav class="nav">
-        <ul class="nav-list">
-          <li><a href="#about" class="nav-link smooth-scroll">About</a></li>
-          <li><a href="#projects" class="nav-link smooth-scroll">Projects</a></li>
-          <li><a href="#skills" class="nav-link smooth-scroll">Skills</a></li>
-          <li><a href="test1.html" class="nav-link">Practice 1</a></li>
-          <li><a href="test2.html" class="nav-link">Practice 2</a></li>
-          <li><a href="test3.html" class="nav-link">Practice 3</a></li>
-          <li><a href="#contact" class="nav-link smooth-scroll">Contact</a></li>
-        </ul>
+      <nav>
+        <a href="#services">Услуги</a>
+        <a href="#cases">Кейсы</a>
+        <a href="#contact">Контакты</a>
+        <a href="https://github.com/solosenkov">GitHub</a>
       </nav>
-      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
-        <i class="fas fa-moon"></i>
-      </button>
-      <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
     </div>
   </header>
 
-  <main>
-    <!-- Hero Section -->
-    <section class="hero" id="hero">
-      <div class="hero-background">
-        <!-- Floating Bugs/Icons for visual interest -->
-        <i class="fas fa-bug bug-icon"></i>
-        <i class="fas fa-code bug-icon"></i>
-        <i class="fas fa-vial bug-icon"></i>
-        <i class="fas fa-check-circle bug-icon"></i>
-        <i class="fas fa-shield-alt bug-icon"></i>
-        <i class="fas fa-search bug-icon"></i>
-        <!-- Code snippets -->
-        <span class="code-particle" style="left: 15%; top: 35%;">{ }</span>
-        <span class="code-particle" style="left: 85%; top: 60%;">< /></span>
-        <span class="code-particle" style="left: 30%; top: 75%;">✓</span>
-        <span class="code-particle" style="left: 65%; top: 25%;">404</span>
-        <span class="code-particle" style="left: 45%; top: 85%;">QA</span>
-      </div>
-      <div class="container hero-content">
-        <div class="hero-text" data-aos="fade-right">
-          <h1 class="hero-title">
-            Hi, I'm <span class="gradient-text">Evgenii</span>
-          </h1>
-          <h2 class="hero-subtitle">Software Tester & QA Engineer</h2>
-          <p class="hero-description">
-            Helping create better products through comprehensive testing, automation, and quality assurance
-          </p>
-          <div class="hero-cta">
-            <a href="#projects" class="btn btn-primary smooth-scroll">
-              <span>View Projects</span>
-              <i class="fas fa-arrow-down"></i>
-            </a>
-            <a href="CV1.pdf" target="_blank" class="btn btn-secondary">
-              <i class="fas fa-download"></i>
-              <span>Download CV</span>
-            </a>
-          </div>
-        </div>
-        <div class="hero-image" data-aos="fade-left">
-          <div class="profile-image-wrapper">
-            <img src="me.jpg" alt="Evgenii Solosenkov" class="profile-image" loading="lazy">
-            <div class="profile-ring"></div>
-          </div>
-        </div>
-      </div>
-      <div class="scroll-indicator">
-        <i class="fas fa-chevron-down"></i>
-      </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="section about-section">
-      <div class="container">
-        <h2 class="section-title" data-aos="fade-up">
-          <span class="title-number">01.</span> About Me
-        </h2>
-        <div class="about-content" data-aos="fade-up" data-aos-delay="100">
-          <p class="about-intro">
-            Hi, my name is Evgenii. I'm not just a tester—I'm a <span class="highlight-text">QA architect</span> who builds testing strategies, 
-            tears down fragile code, and helps teams deliver products that don't embarrass them. I've been in the trenches 
-            of software quality for years, and I know every trick in the book.
-          </p>
-          <p class="about-text">
-            I've mastered the art of breaking things (intentionally). Whether it's functional, API, performance, or UI/UX 
-            testing—I attack from every angle. Jira, Confluence, TestRail, Qase.io, Youtrack—these are my playgrounds. 
-            I wield Postman, Newman, curl, and DevTools like a ninja, and I've got SQL queries tattooed on my brain. 
-            Playwright? Cypress? I can automate faster than devs can blink.
-          </p>
-          <p class="about-text">
-            My GitHub repos are packed with testing frameworks, utilities, and tools that make QA life easier. 
-            Check them out—there's everything from custom bug hunters to API validators to automation scaffolds. 
-            I don't just test; I <span class="highlight-text">build the future of testing</span>.
-          </p>
-          <p class="about-text">
-            REST APIs fear my scrutiny. Databases bend to my SQL. And if your product isn't battle-tested, 
-            it will be after I'm done with it.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- GitHub Projects Section -->
-    <section id="projects" class="section projects-section">
-      <div class="container">
-        <h2 class="section-title" data-aos="fade-up">
-          <span class="title-number">02.</span> My GitHub Projects
-        </h2>
-        <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
-          Open-source testing tools and utilities I've built to make QA work easier and more efficient
-        </p>
-
-        <div class="projects-grid">
-          <!-- Project 1: Easy Sniff -->
-          <div class="project-card" data-aos="fade-up" data-aos-delay="100">
-            <div class="project-header">
-              <div class="project-icon">🔍</div>
-              <h3 class="project-title">Easy Sniff</h3>
-            </div>
-            <p class="project-subtitle">Browser Extension for Real-Time Network Monitoring</p>
-            <p class="project-description">
-              Chrome extension for testers that intercepts all HTTP(S) requests, displays them in a convenient interface, 
-              shows methods (GET, POST, PUT, DELETE), status codes, response times, and even works with WebSocket messages. 
-              Perfect for API testing, debugging, and analyzing network activity of your application.
-            </p>
-            <ul class="project-features">
-              <li><i class="fas fa-check"></i> Real-time request monitoring</li>
-              <li><i class="fas fa-check"></i> Filtering by URL, method, status, type</li>
-              <li><i class="fas fa-check"></i> WebSocket protocol support</li>
-              <li><i class="fas fa-check"></i> Sorting and quick search</li>
-            </ul>
-            <a href="https://github.com/solosenkov/easy-sniff" target="_blank" class="project-link">
-              <i class="fab fa-github"></i> View on GitHub
-            </a>
-          </div>
-
-          <!-- Project 2: VERST-KAKA -->
-          <div class="project-card" data-aos="fade-up" data-aos-delay="150">
-            <div class="project-header">
-              <div class="project-icon">📏</div>
-              <h3 class="project-title">VERST-KAKA</h3>
-            </div>
-            <p class="project-subtitle">Layout Ruler — Pixel-Perfect Design Validation</p>
-            <p class="project-description">
-              Chrome extension for designers and QA engineers that helps validate the quality of web page layouts. 
-              The "Ruler" tool lets you measure any distances between elements, check alignment, spacing, and styles. 
-              Perfect for regression testing UI and design validation.
-            </p>
-            <ul class="project-features">
-              <li><i class="fas fa-check"></i> Measure horizontal and vertical distances</li>
-              <li><i class="fas fa-check"></i> Display dimensions in pixels</li>
-              <li><i class="fas fa-check"></i> Visual hints during measurement</li>
-              <li><i class="fas fa-check"></i> Quick mode switching</li>
-            </ul>
-            <a href="https://github.com/solosenkov/VERST-KAKA" target="_blank" class="project-link">
-              <i class="fab fa-github"></i> View on GitHub
-            </a>
-          </div>
-
-          <!-- Project 3: SQL_BOT -->
-          <div class="project-card" data-aos="fade-up" data-aos-delay="200">
-            <div class="project-header">
-              <div class="project-icon">🤖</div>
-              <h3 class="project-title">SQL_BOT</h3>
-            </div>
-            <p class="project-subtitle">Telegram Bot for SQL Query Training</p>
-            <p class="project-description">
-              Telegram bot for practicing SQL queries right in the messenger. Simply start the bot and get access to 
-              a ready-made database with tables (users, students, teachers, subjects). Perfect for learning, interview 
-              preparation, or quick SQL syntax testing.
-            </p>
-            <ul class="project-features">
-              <li><i class="fas fa-check"></i> Built-in SQLite database</li>
-              <li><i class="fas fa-check"></i> Pre-configured tables for practice</li>
-              <li><i class="fas fa-check"></i> Instant query feedback</li>
-              <li><i class="fas fa-check"></i> Great for learning and interviews</li>
-            </ul>
-            <a href="https://github.com/solosenkov/SQL_BOT" target="_blank" class="project-link">
-              <i class="fab fa-github"></i> View on GitHub
-            </a>
-          </div>
-
-          <!-- Project 4: tg_bot_fish -->
-          <div class="project-card" data-aos="fade-up" data-aos-delay="250">
-            <div class="project-header">
-              <div class="project-icon">🐠</div>
-              <h3 class="project-title">tg_bot_fish</h3>
-            </div>
-            <p class="project-subtitle">Lorem Ipsum Generator Bot</p>
-            <p class="project-description">
-              Simple but useful Telegram bot for generating placeholder text (Lorem Ipsum). Need filler text for mockups, 
-              layout testing, or demos? Just request text of the desired length, and the bot will generate it. 
-              Perfect for QA when testing text fields and responsive design.
-            </p>
-            <ul class="project-features">
-              <li><i class="fas fa-check"></i> Lorem Ipsum text generation</li>
-              <li><i class="fas fa-check"></i> Configurable word/paragraph count</li>
-              <li><i class="fas fa-check"></i> Fast and convenient interface</li>
-            </ul>
-            <a href="https://github.com/solosenkov/tg_bot_fish" target="_blank" class="project-link">
-              <i class="fab fa-github"></i> View on GitHub
-            </a>
-          </div>
-
-          <!-- Project 5: tg_bot_jsonvalidator -->
-          <div class="project-card" data-aos="fade-up" data-aos-delay="300">
-            <div class="project-header">
-              <div class="project-icon">✅</div>
-              <h3 class="project-title">tg_bot_jsonvalidator</h3>
-            </div>
-            <p class="project-subtitle">JSON Validator Telegram Bot</p>
-            <p class="project-description">
-              Telegram bot for validating and formatting JSON. Copy your JSON, send it to the bot — it checks syntax, 
-              highlights errors, and returns beautifully formatted results. Indispensable tool for API testing and payload validation.
-            </p>
-            <ul class="project-features">
-              <li><i class="fas fa-check"></i> JSON syntax validation</li>
-              <li><i class="fas fa-check"></i> Formatting and pretty-print output</li>
-              <li><i class="fas fa-check"></i> Error identification</li>
-              <li><i class="fas fa-check"></i> Essential for API testing</li>
-            </ul>
-            <a href="https://github.com/solosenkov/tg_bot_jsonvalidator" target="_blank" class="project-link">
-              <i class="fab fa-github"></i> View on GitHub
-            </a>
-          </div>
-
-          <!-- Project 6: py_lessons -->
-          <div class="project-card" data-aos="fade-up" data-aos-delay="350">
-            <div class="project-header">
-              <div class="project-icon">📚</div>
-              <h3 class="project-title">py_lessons</h3>
-            </div>
-            <p class="project-subtitle">Python Learning Repository</p>
-            <p class="project-description">
-              Repository with Python examples and lessons for beginners. Structured lessons with code and explanations. 
-              Perfect for teaching your testing team the fundamentals of Python before diving into test automation.
-            </p>
-            <ul class="project-features">
-              <li><i class="fas fa-check"></i> Core Python concepts</li>
-              <li><i class="fas fa-check"></i> Code examples</li>
-              <li><i class="fas fa-check"></i> Structured lessons</li>
-            </ul>
-            <a href="https://github.com/solosenkov/py_lessons" target="_blank" class="project-link">
-              <i class="fab fa-github"></i> View on GitHub
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="section skills-section">
-      <div class="container">
-        <h2 class="section-title" data-aos="fade-up">
-          <span class="title-number">03.</span> Skills & Expertise
-        </h2>
-        <div class="skills-grid">
-          <div class="skill-card" data-aos="fade-up" data-aos-delay="100">
-            <div class="skill-icon">
-              <i class="fas fa-vial"></i>
-            </div>
-            <h3 class="skill-title">Testing Types</h3>
-            <ul class="skill-list">
-              <li><i class="fas fa-check"></i> Functional Testing</li>
-              <li><i class="fas fa-check"></i> UX/UI Testing</li>
-              <li><i class="fas fa-check"></i> Smoke & Regression</li>
-              <li><i class="fas fa-check"></i> API Testing</li>
-            </ul>
-          </div>
-
-          <div class="skill-card" data-aos="fade-up" data-aos-delay="200">
-            <div class="skill-icon">
-              <i class="fas fa-robot"></i>
-            </div>
-            <h3 class="skill-title">Automation</h3>
-            <ul class="skill-list">
-              <li><i class="fas fa-check"></i> Playwright</li>
-              <li><i class="fas fa-check"></i> Postman & Newman</li>
-              <li><i class="fas fa-check"></i> JMeter</li>
-              <li><i class="fas fa-check"></i> DevTools</li>
-            </ul>
-          </div>
-
-          <div class="skill-card" data-aos="fade-up" data-aos-delay="300">
-            <div class="skill-icon">
-              <i class="fas fa-tools"></i>
-            </div>
-            <h3 class="skill-title">Tools</h3>
-            <ul class="skill-list">
-              <li><i class="fas fa-check"></i> Jira & Confluence</li>
-              <li><i class="fas fa-check"></i> Qase.io & Youtrack</li>
-              <li><i class="fas fa-check"></i> GitLab & GitHub</li>
-              <li><i class="fas fa-check"></i> SQL & pgAdmin</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="section contact-section">
-      <div class="container">
-        <h2 class="section-title" data-aos="fade-up">
-          <span class="title-number">04.</span> Get In Touch
-        </h2>
-        <p class="contact-intro" data-aos="fade-up" data-aos-delay="100">
-          Feel free to reach out to me on any of these platforms. I'm always open to discussing new opportunities and interesting projects!
-        </p>
-        <div class="contact-grid">
-          <a href="https://t.me/solosenkoff" target="_blank" class="contact-card telegram" data-aos="fade-up" data-aos-delay="100">
-            <div class="contact-icon">
-              <i class="fab fa-telegram"></i>
-            </div>
-            <h3>Telegram</h3>
-            <p>@solosenkoff</p>
-          </a>
-
-          <a href="https://www.linkedin.com/in/eugene-solosenkov/" target="_blank" class="contact-card linkedin" data-aos="fade-up" data-aos-delay="150">
-            <div class="contact-icon">
-              <i class="fab fa-linkedin"></i>
-            </div>
-            <h3>LinkedIn</h3>
-            <p>Eugene Solosenkov</p>
-          </a>
-
-          <a href="https://github.com/solosenkov/solosenkov" target="_blank" class="contact-card github" data-aos="fade-up" data-aos-delay="200">
-            <div class="contact-icon">
-              <i class="fab fa-github"></i>
-            </div>
-            <h3>GitHub</h3>
-            <p>solosenkov</p>
-          </a>
-
-          <a href="mailto:solosenkov@gmail.com" target="_blank" class="contact-card email" data-aos="fade-up" data-aos-delay="250">
-            <div class="contact-icon">
-              <i class="fas fa-envelope"></i>
-            </div>
-            <h3>Email</h3>
-            <p>solosenkov@gmail.com</p>
-          </a>
-
-          <a href="https://www.utest.com/" target="_blank" class="contact-card utest" data-aos="fade-up" data-aos-delay="300">
-            <div class="contact-icon">
-              <i class="fas fa-bug"></i>
-            </div>
-            <h3>uTest</h3>
-            <p>ID: 1615442</p>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Chuck Norris Section -->
-    <section class="section chuck-section">
-      <div class="container">
-        <div class="chuck-card" data-aos="zoom-in">
-          <div class="chuck-header">
-            <div class="chuck-icon">
-              <i class="fas fa-laugh-beam"></i>
-            </div>
-            <h3>Chuck Norris Facts</h3>
-          </div>
-          <div class="chuck-content">
-            <p id="joke-container" class="chuck-joke">Loading...</p>
-          </div>
-          <button id="new-joke-btn" class="btn btn-accent">
-            <i class="fas fa-sync-alt"></i>
-            <span>Get New Fact</span>
-          </button>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
+  <section class="hero">
+    <div class="blueprint-stamp">КБ-ПА / ЛИСТ 01</div>
     <div class="container">
-      <p class="footer-text">
-        &copy; 2025 Evgenii Solosenkov | Testing o muerte | Version 2.0
-      </p>
-      <p class="footer-subtext">Built with HTML, CSS & vanilla JavaScript</p>
+      <div class="hero-tag">Конструкторское бюро цифровых систем</div>
+      <h1>Цифровые <span>решения</span> для бизнеса и бюджетных организаций</h1>
+      <p>Создаём сайты, CRM и системы автоматизации. Без лишней сложности — с понятной архитектурой и прозрачными сроками. MVP за 1–3 дня.</p>
+      <div class="hero-buttons">
+        <a href="#contact" class="btn btn-primary">Получить консультацию →</a>
+        <a href="#cases" class="btn btn-ghost">Посмотреть кейсы</a>
+      </div>
+      <div class="metrics">
+        <div class="metric"><strong>20+</strong><span>Проектов</span></div>
+        <div class="metric"><strong>1–3</strong><span>Дня до MVP</span></div>
+        <div class="metric"><strong>РФ · СНГ · Азия</strong><span>Регионы</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="services">
+    <div class="container">
+      <div class="section-kicker">Услуги</div>
+      <h2>Что мы делаем</h2>
+      <div class="services-grid">
+        <div class="service">
+          <div class="service-num">01 / Сайты</div>
+          <h3>Сайты под ключ</h3>
+          <p>Лендинги, визитки, корпоративные сайты, порталы, личные кабинеты. Адаптивный дизайн, SEO-оптимизация, формы заявок.</p>
+        </div>
+        <div class="service">
+          <div class="service-num">02 / CRM</div>
+          <h3>CRM и учёт</h3>
+          <p>Системы учёта клиентов, заявок, записей, расписания. Статусы, роли, уведомления, отчёты для руководителя.</p>
+        </div>
+        <div class="service">
+          <div class="service-num">03 / Боты</div>
+          <h3>Telegram-боты</h3>
+          <p>Запись клиентов, уведомления, меню, оплата, FAQ. Интеграция с CRM и сайтом. Автоматизация 24/7.</p>
+        </div>
+        <div class="service">
+          <div class="service-num">04 / Автоматизация</div>
+          <h3>Автоматизация процессов</h3>
+          <p>Документооборот, заявки, согласования, регламентные задачи. Убираем ручную работу.</p>
+        </div>
+        <div class="service">
+          <div class="service-num">05 / Интеграции</div>
+          <h3>Интеграции</h3>
+          <p>Связываем сайт, CRM, почту, мессенджеры, 1С, платёжные системы. API, вебхуки, синхронизация данных.</p>
+        </div>
+        <div class="service">
+          <div class="service-num">06 / Сопровождение</div>
+          <h3>Сопровождение</h3>
+          <p>Поддерживаем запущенные решения, добавляем функции, мониторим. Помогаем системе расти.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="cases">
+    <div class="container">
+      <div class="section-kicker">Практика</div>
+      <h2>Кейсы</h2>
+      <div class="cases-grid">
+        <div class="case">
+          <div class="case-tag">Туризм · Автоматизация</div>
+          <h3>Tolik Tours</h3>
+          <h4>Полная цифровая автоматизация тур-агентства</h4>
+          <p>Сайт, CRM и Telegram-бот под ключ. Самое популярное тур-агентство в Нячанге принимает заявки 24/7. Полный цикл — от привлечения до записи — без ручного ввода. Срок: 2 дня.</p>
+          <a href="https://toliktours.ru" class="case-link">toliktours.ru →</a>
+        </div>
+        <div class="case">
+          <div class="case-tag">Маркетплейс · Платформа</div>
+          <h3>RikiTiki</h3>
+          <h4>Маркетплейс детских услуг</h4>
+          <p>Веб-платформа, связывающая родителей и провайдеров услуг. Лучший детский маркетплейс во Вьетнаме. Многоязычный интерфейс (RU/EN/VN), система бронирования. Срок: 1 месяц.</p>
+          <a href="https://riki-tiki.org" class="case-link">riki-tiki.org →</a>
+        </div>
+        <div class="case">
+          <div class="case-tag">SaaS · AI</div>
+          <h3>Lendoso</h3>
+          <h4>AI-аудит лендингов</h4>
+          <p>SaaS-платформа для автоматического аудита лендингов. Playwright собирает данные, AI анализирует UX и конверсию. Время проверки сократилось с 2 часов до 2 минут.</p>
+        </div>
+        <div class="case">
+          <div class="case-tag">CRM · Автоматизация</div>
+          <h3>CRM для частных заказчиков</h3>
+          <h4>Автоматизация бизнес-процессов</h4>
+          <p>Множество CRM-систем для малого бизнеса: учёт клиентов, заявок, записей. Интеграции с мессенджерами, платёжными системами, 1С. Замена таблиц и бумажных журналов.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="container contact-inner">
+      <div class="section-kicker">Контакты</div>
+      <h2>Обсудим задачу?</h2>
+      <p>Расскажите что нужно — предложим решение и сроки.</p>
+      <div class="contact-links">
+        <a href="https://t.me/solosenkoff">Telegram →</a>
+        <a href="mailto:nuzhe@yandex.ru">Email →</a>
+        <a href="https://github.com/solosenkov">GitHub →</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container footer-inner">
+      <span>© 2026 ПромАвтоматика. Конструкторское бюро</span>
+      <span>Сайты · CRM · Боты · Автоматизация</span>
     </div>
   </footer>
 
-  <script src="script.js"></script>
 </body>
-
 </html>
