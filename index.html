@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ПромАвтоматика. Конструкторское бюро</title>
-  <meta name="description" content="Цифровая студия полного цикла. Сайты, CRM, Telegram-боты, автоматизация бизнес-процессов.">
-  <meta name="author" content="ПромАвтоматика">
-  <meta property="og:title" content="ПромАвтоматика. Конструкторское бюро">
-  <meta property="og:description" content="Сайты, CRM, Telegram-боты, автоматизация. MVP за 1-3 дня.">
+  <title>Evgenii Solosenkov — QA Engineer & Product Builder</title>
+  <meta name="description" content="Full-Stack QA Engineer, QA Lead, and product-minded builder. 7+ years breaking software and building things that work.">
+  <meta name="author" content="Evgenii Solosenkov">
+  <meta property="og:title" content="Evgenii Solosenkov — QA Engineer & Product Builder">
+  <meta property="og:description" content="7+ years of breaking software so users don't have to. QA Lead. Product builder. AI-native tester.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://solosenkov.github.io">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -30,7 +30,6 @@
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
-
     html { scroll-behavior: smooth; }
 
     body {
@@ -42,7 +41,6 @@
       overflow-x: hidden;
     }
 
-    /* Blueprint grid background */
     body::before {
       content: '';
       position: fixed;
@@ -82,27 +80,15 @@
 
     .logo {
       font-family: var(--font-display);
-      font-size: 18px;
+      font-size: 20px;
       font-weight: 700;
       letter-spacing: 0.02em;
       color: var(--ink);
       text-decoration: none;
     }
-
     .logo span { color: var(--teal); }
 
-    .logo small {
-      display: block;
-      font-family: var(--font-mono);
-      font-size: 10px;
-      font-weight: 500;
-      color: var(--muted);
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-    }
-
     nav { display: flex; gap: 28px; }
-
     nav a {
       font-family: var(--font-mono);
       font-size: 12px;
@@ -113,7 +99,6 @@
       letter-spacing: 0.1em;
       transition: color 0.2s;
     }
-
     nav a:hover { color: var(--teal); }
 
     /* Hero */
@@ -133,7 +118,6 @@
       align-items: center;
       gap: 10px;
     }
-
     .hero-tag::before {
       content: '';
       width: 32px;
@@ -150,14 +134,14 @@
       margin-bottom: 28px;
       max-width: 800px;
     }
-
     .hero h1 span { color: var(--teal); }
 
     .hero p {
       font-size: 18px;
       color: var(--muted);
-      max-width: 520px;
+      max-width: 560px;
       margin-bottom: 40px;
+      line-height: 1.7;
     }
 
     .hero-buttons { display: flex; gap: 16px; flex-wrap: wrap; }
@@ -175,49 +159,24 @@
       align-items: center;
       gap: 8px;
     }
-
     .btn-primary {
       background: var(--teal);
       color: var(--bg);
     }
-
     .btn-primary:hover {
       background: #0d8b83;
       box-shadow: 0 0 24px var(--teal-glow);
     }
-
     .btn-ghost {
       border: 1px solid var(--line-bright);
       color: var(--ink);
     }
-
     .btn-ghost:hover { border-color: var(--teal); color: var(--teal); }
-
-    /* Blueprint decorations */
-    .blueprint-stamp {
-      position: absolute;
-      top: 40px;
-      right: 24px;
-      font-family: var(--font-mono);
-      font-size: 10px;
-      color: var(--muted);
-      letter-spacing: 0.15em;
-      opacity: 0.5;
-    }
-
-    .blueprint-dim {
-      position: absolute;
-      font-family: var(--font-mono);
-      font-size: 10px;
-      color: var(--teal);
-      opacity: 0.4;
-      letter-spacing: 0.1em;
-    }
 
     /* Metrics */
     .metrics {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(4, 1fr);
       gap: 0;
       margin-top: 80px;
       border-top: 1px solid var(--line);
@@ -229,7 +188,6 @@
       text-align: center;
       border-right: 1px solid var(--line);
     }
-
     .metric:last-child { border-right: none; }
 
     .metric strong {
@@ -240,7 +198,6 @@
       color: var(--teal);
       line-height: 1;
     }
-
     .metric span {
       display: block;
       font-family: var(--font-mono);
@@ -251,7 +208,7 @@
       margin-top: 10px;
     }
 
-    /* Services */
+    /* Sections */
     .section { padding: 100px 0; }
 
     .section-kicker {
@@ -262,7 +219,6 @@
       text-transform: uppercase;
       margin-bottom: 16px;
     }
-
     .section h2 {
       font-family: var(--font-display);
       font-size: clamp(32px, 5vw, 52px);
@@ -272,7 +228,8 @@
       max-width: 700px;
     }
 
-    .services-grid {
+    /* Expertise grid */
+    .expertise-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 1px;
@@ -280,53 +237,49 @@
       border: 1px solid var(--line);
     }
 
-    .service {
+    .expertise-card {
       background: var(--bg);
       padding: 40px 32px;
       transition: background 0.2s;
     }
+    .expertise-card:hover { background: var(--surface); }
 
-    .service:hover { background: var(--surface); }
-
-    .service-num {
+    .expertise-num {
       font-family: var(--font-mono);
       font-size: 11px;
       color: var(--teal);
       letter-spacing: 0.1em;
       margin-bottom: 16px;
     }
-
-    .service h3 {
+    .expertise-card h3 {
       font-family: var(--font-display);
       font-size: 22px;
       font-weight: 600;
       margin-bottom: 12px;
     }
-
-    .service p {
+    .expertise-card p {
       color: var(--muted);
       font-size: 14px;
       line-height: 1.6;
     }
 
-    /* Cases */
-    .cases-grid {
+    /* Projects */
+    .projects-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 24px;
     }
 
-    .case {
+    .project {
       background: var(--surface);
       border: 1px solid var(--line);
       border-radius: 6px;
       padding: 36px;
       transition: border-color 0.2s;
     }
+    .project:hover { border-color: var(--line-bright); }
 
-    .case:hover { border-color: var(--line-bright); }
-
-    .case-tag {
+    .project-tag {
       font-family: var(--font-mono);
       font-size: 10px;
       color: var(--teal);
@@ -334,29 +287,18 @@
       text-transform: uppercase;
       margin-bottom: 14px;
     }
-
-    .case h3 {
+    .project h3 {
       font-family: var(--font-display);
       font-size: 24px;
       font-weight: 600;
       margin-bottom: 8px;
     }
-
-    .case h4 {
-      font-family: var(--font-body);
-      font-size: 14px;
-      font-weight: 500;
-      color: var(--muted);
-      margin-bottom: 16px;
-    }
-
-    .case p {
+    .project p {
       font-size: 14px;
       color: var(--muted);
       line-height: 1.7;
     }
-
-    .case-link {
+    .project-link {
       display: inline-block;
       margin-top: 16px;
       font-family: var(--font-mono);
@@ -365,39 +307,70 @@
       text-decoration: none;
       letter-spacing: 0.05em;
     }
+    .project-link:hover { text-decoration: underline; }
 
-    .case-link:hover { text-decoration: underline; }
+    /* Tags */
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 16px;
+    }
+    .tag {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      padding: 4px 10px;
+      border: 1px solid var(--line);
+      border-radius: 3px;
+      color: var(--muted);
+      letter-spacing: 0.05em;
+    }
+
+    /* AI section */
+    .ai-highlight {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-left: 3px solid var(--teal);
+      border-radius: 0 6px 6px 0;
+      padding: 40px;
+    }
+    .ai-highlight h3 {
+      font-family: var(--font-display);
+      font-size: 28px;
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+    .ai-highlight p {
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+    .ai-highlight p:last-child { margin-bottom: 0; }
 
     /* Contact */
     .contact {
       padding: 100px 0;
       border-top: 1px solid var(--line);
     }
-
-    .contact-inner {
-      text-align: center;
-    }
-
+    .contact-inner { text-align: center; }
     .contact h2 {
       font-family: var(--font-display);
       font-size: clamp(36px, 6vw, 64px);
       font-weight: 700;
       margin-bottom: 24px;
     }
-
     .contact p {
       color: var(--muted);
       font-size: 18px;
       margin-bottom: 40px;
     }
-
     .contact-links {
       display: flex;
       gap: 24px;
       justify-content: center;
       flex-wrap: wrap;
     }
-
     .contact-links a {
       font-family: var(--font-mono);
       font-size: 13px;
@@ -408,7 +381,6 @@
       border-radius: 4px;
       transition: all 0.2s;
     }
-
     .contact-links a:hover {
       border-color: var(--teal);
       color: var(--teal);
@@ -419,7 +391,6 @@
       padding: 40px 0;
       border-top: 1px solid var(--line);
     }
-
     .footer-inner {
       display: flex;
       justify-content: space-between;
@@ -427,7 +398,6 @@
       flex-wrap: wrap;
       gap: 16px;
     }
-
     .footer-inner span {
       font-family: var(--font-mono);
       font-size: 11px;
@@ -438,11 +408,10 @@
     /* Mobile */
     @media (max-width: 768px) {
       nav { display: none; }
-      .metrics { grid-template-columns: 1fr; }
+      .metrics { grid-template-columns: 1fr 1fr; }
       .metric { border-right: none; border-bottom: 1px solid var(--line); }
-      .metric:last-child { border-bottom: none; }
-      .cases-grid { grid-template-columns: 1fr; }
-      .blueprint-stamp, .blueprint-dim { display: none; }
+      .metric:nth-child(2) { border-right: none; }
+      .projects-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -450,106 +419,114 @@
 
   <header>
     <div class="container header-inner">
-      <a href="#" class="logo">
-        Пром<span>Автоматика</span>
-        <small>Конструкторское бюро</small>
-      </a>
+      <a href="#" class="logo">solosenkov<span>.dev</span></a>
       <nav>
-        <a href="#services">Услуги</a>
-        <a href="#cases">Кейсы</a>
-        <a href="#contact">Контакты</a>
+        <a href="#expertise">Expertise</a>
+        <a href="#projects">Projects</a>
+        <a href="#ai">AI & QA</a>
+        <a href="#contact">Contact</a>
         <a href="https://github.com/solosenkov">GitHub</a>
       </nav>
     </div>
   </header>
 
   <section class="hero">
-    <div class="blueprint-stamp">КБ-ПА / ЛИСТ 01</div>
     <div class="container">
-      <div class="hero-tag">Конструкторское бюро цифровых систем</div>
-      <h1>Цифровые <span>решения</span> для бизнеса и бюджетных организаций</h1>
-      <p>Создаём сайты, CRM и системы автоматизации. Без лишней сложности — с понятной архитектурой и прозрачными сроками. MVP за 1–3 дня.</p>
+      <div class="hero-tag">Full-Stack QA Engineer &middot; Product Builder</div>
+      <h1>I break software<br>so <span>users</span> don't have to</h1>
+      <p>7+ years of hunting bugs across web, mobile, and API. QA lead who builds teams, processes, and products. From exploratory testing to AI-native workflows — if it ships, I've made it better.</p>
       <div class="hero-buttons">
-        <a href="#contact" class="btn btn-primary">Получить консультацию →</a>
-        <a href="#cases" class="btn btn-ghost">Посмотреть кейсы</a>
+        <a href="#contact" class="btn btn-primary">Get in touch →</a>
+        <a href="https://linkedin.com/in/eugene-solosenkov" class="btn btn-ghost">LinkedIn</a>
       </div>
       <div class="metrics">
-        <div class="metric"><strong>20+</strong><span>Проектов</span></div>
-        <div class="metric"><strong>1–3</strong><span>Дня до MVP</span></div>
-        <div class="metric"><strong>РФ · СНГ · Азия</strong><span>Регионы</span></div>
+        <div class="metric"><strong>7+</strong><span>Years in QA</span></div>
+        <div class="metric"><strong>50+</strong><span>Projects shipped</span></div>
+        <div class="metric"><strong>60%</strong><span>Manual effort cut</span></div>
+        <div class="metric"><strong>∞</strong><span>Bugs found</span></div>
       </div>
     </div>
   </section>
 
-  <section class="section" id="services">
+  <section class="section" id="expertise">
     <div class="container">
-      <div class="section-kicker">Услуги</div>
-      <h2>Что мы делаем</h2>
-      <div class="services-grid">
-        <div class="service">
-          <div class="service-num">01 / Сайты</div>
-          <h3>Сайты под ключ</h3>
-          <p>Лендинги, визитки, корпоративные сайты, порталы, личные кабинеты. Адаптивный дизайн, SEO-оптимизация, формы заявок.</p>
+      <div class="section-kicker">What I do</div>
+      <h2>Quality engineering<br>at every level</h2>
+      <div class="expertise-grid">
+        <div class="expertise-card">
+          <div class="expertise-num">01 / Testing</div>
+          <h3>Manual & Exploratory</h3>
+          <p>Deep exploratory sessions, risk-based test strategies, edge-case hunting. I don't just follow test plans — I find what they missed.</p>
         </div>
-        <div class="service">
-          <div class="service-num">02 / CRM</div>
-          <h3>CRM и учёт</h3>
-          <p>Системы учёта клиентов, заявок, записей, расписания. Статусы, роли, уведомления, отчёты для руководителя.</p>
+        <div class="expertise-card">
+          <div class="expertise-num">02 / API</div>
+          <h3>API & Backend Testing</h3>
+          <p>Postman, Newman, contract testing, schema validation. If it has an endpoint, I'll break it — and document exactly how.</p>
         </div>
-        <div class="service">
-          <div class="service-num">03 / Боты</div>
-          <h3>Telegram-боты</h3>
-          <p>Запись клиентов, уведомления, меню, оплата, FAQ. Интеграция с CRM и сайтом. Автоматизация 24/7.</p>
+        <div class="expertise-card">
+          <div class="expertise-num">03 / Leadership</div>
+          <h3>QA Leadership</h3>
+          <p>Building QA processes from zero, hiring testers, defining test strategies, release readiness gates. Quality is a culture, not a checklist.</p>
         </div>
-        <div class="service">
-          <div class="service-num">04 / Автоматизация</div>
-          <h3>Автоматизация процессов</h3>
-          <p>Документооборот, заявки, согласования, регламентные задачи. Убираем ручную работу.</p>
-        </div>
-        <div class="service">
-          <div class="service-num">05 / Интеграции</div>
-          <h3>Интеграции</h3>
-          <p>Связываем сайт, CRM, почту, мессенджеры, 1С, платёжные системы. API, вебхуки, синхронизация данных.</p>
-        </div>
-        <div class="service">
-          <div class="service-num">06 / Сопровождение</div>
-          <h3>Сопровождение</h3>
-          <p>Поддерживаем запущенные решения, добавляем функции, мониторим. Помогаем системе расти.</p>
+        <div class="expertise-card">
+          <div class="expertise-num">04 / AI</div>
+          <h3>AI-Native Testing</h3>
+          <p>LLM-powered test generation, agentic workflows, prompt engineering for QA. Using AI to test smarter, not just faster.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="section" id="cases">
+  <section class="section" id="projects">
     <div class="container">
-      <div class="section-kicker">Практика</div>
-      <h2>Кейсы</h2>
-      <div class="cases-grid">
-        <div class="case">
-          <div class="case-tag">Туризм · Автоматизация</div>
-          <h3>Tolik Tours</h3>
-          <h4>Полная цифровая автоматизация тур-агентства</h4>
-          <p>Сайт, CRM и Telegram-бот под ключ. Самое популярное тур-агентство в Нячанге принимает заявки 24/7. Полный цикл — от привлечения до записи — без ручного ввода. Срок: 2 дня.</p>
-          <a href="https://toliktours.ru" class="case-link">toliktours.ru →</a>
-        </div>
-        <div class="case">
-          <div class="case-tag">Маркетплейс · Платформа</div>
+      <div class="section-kicker">Projects</div>
+      <h2>Things I've built</h2>
+      <div class="projects-grid">
+        <div class="project">
+          <div class="project-tag">Startup &middot; Founder & Developer</div>
           <h3>RikiTiki</h3>
-          <h4>Маркетплейс детских услуг</h4>
-          <p>Веб-платформа, связывающая родителей и провайдеров услуг. Лучший детский маркетплейс во Вьетнаме. Многоязычный интерфейс (RU/EN/VN), система бронирования. Срок: 1 месяц.</p>
-          <a href="https://riki-tiki.org" class="case-link">riki-tiki.org →</a>
+          <p>A family services directory helping families in Nha Trang discover children's and family services. Sole founder and developer — product strategy, marketplace logic, multilingual positioning, full-stack development, and hands-on execution from idea to launch.</p>
+          <div class="tags">
+            <span class="tag">Full-Stack</span>
+            <span class="tag">Marketplace</span>
+            <span class="tag">Multilingual</span>
+            <span class="tag">Product Strategy</span>
+          </div>
+          <a href="https://riki-tiki.org" class="project-link">riki-tiki.org →</a>
         </div>
-        <div class="case">
-          <div class="case-tag">SaaS · AI</div>
-          <h3>Lendoso</h3>
-          <h4>AI-аудит лендингов</h4>
-          <p>SaaS-платформа для автоматического аудита лендингов. Playwright собирает данные, AI анализирует UX и конверсию. Время проверки сократилось с 2 часов до 2 минут.</p>
+        <div class="project">
+          <div class="project-tag">Open Source &middot; Portfolio</div>
+          <h3>GitHub Projects</h3>
+          <p>Open-source experiments, automation tools, and proof-of-concept builds. From CI pipelines to AI-powered testing utilities — code that makes quality engineering faster and more reliable.</p>
+          <div class="tags">
+            <span class="tag">Automation</span>
+            <span class="tag">CI/CD</span>
+            <span class="tag">AI Tools</span>
+            <span class="tag">Testing Utils</span>
+          </div>
+          <a href="https://github.com/solosenkov" class="project-link">github.com/solosenkov →</a>
         </div>
-        <div class="case">
-          <div class="case-tag">CRM · Автоматизация</div>
-          <h3>CRM для частных заказчиков</h3>
-          <h4>Автоматизация бизнес-процессов</h4>
-          <p>Множество CRM-систем для малого бизнеса: учёт клиентов, заявок, записей. Интеграции с мессенджерами, платёжными системами, 1С. Замена таблиц и бумажных журналов.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="ai">
+    <div class="container">
+      <div class="section-kicker">AI & Quality</div>
+      <h2>Testing in the age of AI</h2>
+      <div class="ai-highlight">
+        <h3>AI-Native Quality Engineering</h3>
+        <p>I use LLMs and agentic workflows to supercharge every phase of the QA lifecycle. Day-to-day tooling built around AI for rapid test design, edge-case discovery, and test data generation.</p>
+        <p>Building AI-driven regression suites that auto-adapt to code changes, reducing manual effort by 60%+. Deep in LLM evaluation — designing test matrices for output quality scoring, prompt-injection resilience, and pipeline validation.</p>
+        <p>Applying prompt engineering to create reusable testing agents that autonomously explore applications, generate API contracts, and produce structured bug reports.</p>
+        <div class="tags">
+          <span class="tag">AI-Assisted Testing</span>
+          <span class="tag">LLM-Powered Test Gen</span>
+          <span class="tag">Agentic Workflows</span>
+          <span class="tag">Prompt Engineering</span>
+          <span class="tag">AI Agent Testing</span>
+          <span class="tag">AI-Driven QA</span>
+          <span class="tag">AI Quality Assurance</span>
         </div>
       </div>
     </div>
@@ -557,21 +534,22 @@
 
   <section class="contact" id="contact">
     <div class="container contact-inner">
-      <div class="section-kicker">Контакты</div>
-      <h2>Обсудим задачу?</h2>
-      <p>Расскажите что нужно — предложим решение и сроки.</p>
+      <div class="section-kicker">Contact</div>
+      <h2>Let's build something</h2>
+      <p>Looking for a QA lead who actually ships? Or a product-minded builder who tests?<br>Let's talk.</p>
       <div class="contact-links">
-        <a href="https://t.me/solosenkoff">Telegram →</a>
-        <a href="mailto:solosenkov@gmail.com">Email →</a>
-        <a href="https://github.com/solosenkov">GitHub →</a>
+        <a href="mailto:solosenkov@gmail.com">solosenkov@gmail.com</a>
+        <a href="https://linkedin.com/in/eugene-solosenkov">LinkedIn</a>
+        <a href="https://github.com/solosenkov">GitHub</a>
+        <a href="https://riki-tiki.org">RikiTiki</a>
       </div>
     </div>
   </section>
 
   <footer>
     <div class="container footer-inner">
-      <span>© 2026 ПромАвтоматика. Конструкторское бюро</span>
-      <span>Сайты · CRM · Боты · Автоматизация</span>
+      <span>© 2026 Evgenii Solosenkov</span>
+      <span>Nha Trang, Vietnam</span>
     </div>
   </footer>
 
